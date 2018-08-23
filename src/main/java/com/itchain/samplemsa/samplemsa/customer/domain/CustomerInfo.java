@@ -1,5 +1,11 @@
 package com.itchain.samplemsa.samplemsa.customer.domain;
 
+import com.itchain.samplemsa.samplemsa.common.Aggregate;
+import com.itchain.samplemsa.samplemsa.common.Event;
+import com.itchain.samplemsa.samplemsa.common.OnEvent;
+import com.itchain.samplemsa.samplemsa.customer.domain.event.CustomerAddedEvent;
+import com.itchain.samplemsa.samplemsa.customer.domain.event.CustomerRemovedEvent;
+import com.itchain.samplemsa.samplemsa.customer.domain.event.CustomerUpdatedEvent;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 import org.springframework.data.annotation.Id;

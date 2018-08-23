@@ -1,5 +1,8 @@
 package com.itchain.samplemsa.samplemsa.customer.controller;
 
+import com.itchain.samplemsa.samplemsa.customer.domain.CustomerInfo;
+import com.itchain.samplemsa.samplemsa.customer.domain.dto.CustomerDTO;
+import com.itchain.samplemsa.samplemsa.customer.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

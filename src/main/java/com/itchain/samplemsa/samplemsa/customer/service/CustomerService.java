@@ -1,5 +1,7 @@
 package com.itchain.samplemsa.samplemsa.customer.service;
 
+import com.itchain.samplemsa.samplemsa.customer.domain.CustomerInfo;
+
 public interface CustomerService {
     CustomerInfo getCustomerInfo(String id);
 

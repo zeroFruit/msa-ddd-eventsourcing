@@ -1,5 +1,6 @@
 package com.itchain.samplemsa.samplemsa.customer.domain.event;
 
+import com.itchain.samplemsa.samplemsa.common.Event;
 import lombok.Getter;
 
 @Getter
