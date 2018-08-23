@@ -22,7 +22,7 @@ public class CustomerServiceImpl implements CustomerService {
         return c;
     }
 
-    public void addCustomerInfo(String id, String pw, String name, String address) {
+    public void createCustomerInfo(String id, String pw, String name, String address) {
         if (id.length() == 0) {
             throw new NonIDValueException();
         }

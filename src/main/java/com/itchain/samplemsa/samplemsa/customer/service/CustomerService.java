@@ -5,7 +5,7 @@ import com.itchain.samplemsa.samplemsa.customer.domain.CustomerInfo;
 public interface CustomerService {
     CustomerInfo getCustomerInfo(String id);
 
-    void addCustomerInfo(String id, String pw, String name, String address);
+    void createCustomerInfo(String id, String pw, String name, String address);
 
     void removeCustomerInfo(String id, String pw);
 

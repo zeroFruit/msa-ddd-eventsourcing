@@ -19,7 +19,7 @@ public class CustomerController {
 
     @RequestMapping(value = "/customers/register-customer/{customerInfo}", method = RequestMethod.POST)
     public void registerCustomer(@RequestParam(required = true) CustomerDTO customerInfo) {
-        customerService.addCustomerInfo(customerInfo.getId(), customerInfo.getPw(), customerInfo.getName(), customerInfo.getAddress());
+        customerService.createCustomerInfo(customerInfo.getId(), customerInfo.getPw(), customerInfo.getName(), customerInfo.getAddress());
     }
 
     @RequestMapping(value = "/customers/remove-customer/{customerInfo}", method = RequestMethod.POST)
