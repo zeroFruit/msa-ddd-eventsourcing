@@ -17,7 +17,7 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public CustomerInfo getCustomerInfo(String id) {
-        CustomerInfo c = customerRepository.load(id);
+        CustomerInfo c = customerRepository.findById(id);
 
         return c;
     }
@@ -39,7 +39,7 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     public void removeCustomerInfo(String id, String pw) {
-        CustomerInfo c = customerRepository.load(id);
+        CustomerInfo c = customerRepository.findById(id);
         if (c.checkPassword(pw)) {
             customerRepository.save(c);
         }
@@ -50,7 +50,7 @@ public class CustomerServiceImpl implements CustomerService {
             throw new PasswordTooShortException();
         }
 
-        CustomerInfo c = customerRepository.load(id);
+        CustomerInfo c = customerRepository.findById(id);
 
         customerRepository.save(c);
     }
