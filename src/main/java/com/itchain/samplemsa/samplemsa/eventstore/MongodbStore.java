@@ -4,13 +4,16 @@ import com.itchain.samplemsa.samplemsa.common.Event;
 import com.itchain.samplemsa.samplemsa.eventstore.domain.EntityWithIdAndEventList;
 import com.itchain.samplemsa.samplemsa.eventstore.domain.Store;
 import com.itchain.samplemsa.samplemsa.eventstore.domain.MongoClient;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
-@Repository
+@Component
 @Transactional
 public class MongodbStore implements Store {
     @Autowired

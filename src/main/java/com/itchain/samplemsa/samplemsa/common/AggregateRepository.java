@@ -9,9 +9,11 @@ import java.util.List;
 
 @Component
 public class AggregateRepository<T extends Aggregate> {
-    @Autowired
-    @Qualifier("eventRepositoryImpl")
     private EventRepository eventRepository;
+    
+    public AggregateRepository(EventRepository eventRepository){
+        this.eventRepository = eventRepository;
+    }
 
     public T findById(String id){
         List<Event> eventList = eventRepository.load(id);

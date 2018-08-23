@@ -1,12 +1,21 @@
 package com.itchain.samplemsa.samplemsa;
 
 import com.itchain.samplemsa.samplemsa.common.EventRepositoryImpl;
+import com.itchain.samplemsa.samplemsa.config.TestAppContext;
 import com.itchain.samplemsa.samplemsa.delivery.DeliveryRepository;
 import com.itchain.samplemsa.samplemsa.delivery.domain.DeliverStatus;
 import com.itchain.samplemsa.samplemsa.delivery.domain.Delivery;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringRunner;
 
+@RunWith(SpringRunner.class)
+@ActiveProfiles("test")
+@ContextConfiguration(classes=TestAppContext.class)
 public class AggregateTest {
     @Autowired
     DeliveryRepository deliveryRepository;

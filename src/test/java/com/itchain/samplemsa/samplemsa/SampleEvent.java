@@ -2,6 +2,7 @@ package com.itchain.samplemsa.samplemsa;
 
 import com.itchain.samplemsa.samplemsa.common.Event;
 import lombok.*;
+import org.springframework.lang.NonNull;
 
 @NoArgsConstructor
 @RequiredArgsConstructor

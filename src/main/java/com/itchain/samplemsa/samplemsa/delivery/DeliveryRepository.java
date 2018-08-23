@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class DeliveryRepository extends AggregateRepository<Delivery> {
-    @Autowired
-    @Qualifier("eventRepositoryImpl")
-    private EventRepository eventRepository;
+    public DeliveryRepository(EventRepository eventRepository) {
+        super(eventRepository);
+    }
 }

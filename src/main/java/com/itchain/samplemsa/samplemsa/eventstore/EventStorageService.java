@@ -7,14 +7,18 @@ import com.itchain.samplemsa.samplemsa.eventstore.domain.Store;
 import com.itchain.samplemsa.samplemsa.eventstore.exception.EventIDEmptyException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Component
+@Repository
 public class EventStorageService implements EventRepository {
-    @Autowired
-    Store store;
+    private Store store;
+
+    public EventStorageService(Store store) {
+        this.store = store;
+    }
 
     @Override
     public void save(Event event) {

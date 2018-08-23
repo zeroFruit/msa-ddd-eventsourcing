@@ -3,6 +3,8 @@ package com.itchain.samplemsa.samplemsa.eventstore;
 import com.itchain.samplemsa.samplemsa.SampleEvent;
 import com.itchain.samplemsa.samplemsa.SampleMsaApplication;
 import com.itchain.samplemsa.samplemsa.common.EventRepository;
+import com.itchain.samplemsa.samplemsa.config.AppContext;
+import com.itchain.samplemsa.samplemsa.config.ProductionContext;
 import com.itchain.samplemsa.samplemsa.eventstore.domain.MongoClient;
 import com.itchain.samplemsa.samplemsa.eventstore.exception.EventIDEmptyException;
 import org.junit.After;
@@ -13,7 +15,10 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.test.annotation.DirtiesContext;
+import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -23,11 +28,12 @@ import java.util.List;
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes=SampleMsaApplication.class)
 @TestPropertySource(locations = "classpath:test.properties")
+@ActiveProfiles("prod")
+@ContextConfiguration(classes=ProductionContext.class)
 public class EventStorageServiceTest {
     @Autowired
-    MongoClient client;
+    private MongoClient client;
     @Autowired
-    @Qualifier("eventStorageService")
     private EventRepository repo;
 
     @Rule
